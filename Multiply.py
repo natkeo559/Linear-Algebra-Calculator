@@ -19,12 +19,7 @@ def multiply(mtx_1,mtx_2):
     if size1[1] != size2[0]:
         return 0
     else:
-        m = []
-        for y in range(size1[0]):
-            row = []
-            for x in range(size2[1]):
-                row.append(0)
-            m.append(row)
+        m = [[0 for x in range(size2[1])] for x in range(size1[0])]
 
         for i in range(size1[0]):
             for j in range(size2[1]):
