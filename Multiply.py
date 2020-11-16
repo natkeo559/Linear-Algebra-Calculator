@@ -1,8 +1,6 @@
 def multiply(mtx_1,mtx_2):
-    '''Function to multiply two matrices
-       Input consists of a matrix mtx 1
-       and another matrix mtx 2. If the 
-       two matrices cannot be multiplied
+    '''Function to multiply two matrices. Input consists of a matrix mtx 1
+       and another matrix mtx 2. If the two matrices cannot be multiplied
        then the function will return 0.
 
        Example usage:
