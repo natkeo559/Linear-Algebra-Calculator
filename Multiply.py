@@ -28,7 +28,7 @@ def multiply(mtx_1,mtx_2):
 def scalar(s,mtx):
     '''Function to multiply any scalar and any matrix.
 
-       s:   scalar (int)
+       s:   scalar
        mtx: matrix'''
 
     size = (len(mtx),len(mtx[0]))
