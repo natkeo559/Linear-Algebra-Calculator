@@ -1,4 +1,4 @@
-from numpy.linalg import eig
+from numpy import linalg
 
 def eigenvals(mtx):
     e = linalg.eig(mtx)[0]
