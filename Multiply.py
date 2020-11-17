@@ -24,3 +24,18 @@ def multiply(mtx_1,mtx_2):
                 for k in range(size2[0]):
                     m[i][j] += mtx_1[i][k] * mtx_2[k][j]
         return m
+    
+def scalar(s,mtx):
+    '''Function to multiply any scalar and any matrix.
+
+       s:   scalar (int)
+       mtx: matrix'''
+
+    size = (len(mtx),len(mtx[0]))
+    m = [[0 for x in range(size[1])] for x in range(size[0])]
+    
+
+    for i in range(size[0]):
+        for j in range(size[1]):
+            m[i][j] += s * mtx[i][j]
+    return m
