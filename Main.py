@@ -13,7 +13,7 @@ class GUI:
 
         def banner(self):
             os.system("clear")
-            b = '''
+            self.b = '''
             ==================================================
 
                __   _                     
@@ -24,6 +24,7 @@ class GUI:
               / _ | / /__ ____ / /  _______ _
              / __ |/ / _ `/ -_) _ \/ __/ _ `/
             /_/ |_/_/\_, /\__/_.__/_/  \_,_/  
+                    /___/       
               _____     __         __     __          
              / ___/__ _/ /_____ __/ /__ _/ /____  ____
             / /__/ _ `/ / __/ // / / _ `/ __/ _ \/ __/
@@ -32,15 +33,18 @@ class GUI:
                                                                                                     
             ==================================================
             '''
-            print(f'{b}')
+            print(f'{self.b}')
 
         def selectors(self):
             self.o = '''
                 [1]     -   Matrix Addition/Subtraction  -
                 [2]     -      Matrix Multiplication     -
                 [3]     -        Find Determinant        -
-                [4]     -          Eigenvectors          -
-                [5]     -           Row Reduce           -
+                [4]     -        Matrix Transpose        -
+                [5]     -         Matrix Inverse         -
+                [6]     -          Eigenvectors          -
+                [7]     -          Rank/Nullity          -
+                [8]     -           Row Reduce           -
 
                 Select option:  '''
             s = int(input(self.o))
@@ -61,8 +65,8 @@ class GUI:
                 os.system("clear")
                 print("\n\t\t\t\tEnter a square matrix\n\t\t\t\t=====================")
                 a = ast.literal_eval(input("\t\t\t\tA:  "))
-                c = det(a)
-                print("\t\t\t\tC: ",c,end='\n\n')
+                d = det(a)
+                print("\t\t\t\tD: ",d,end='\n\n')
             elif s == 4:
                 os.system("clear")
                 print("\n\t\t\t\tEnter a matrix\n\t\t\t\t==============")
