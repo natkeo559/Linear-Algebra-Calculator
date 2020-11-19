@@ -8,8 +8,7 @@ import os
 class GUI:
 
         def __init__(self):
-            self.banner()
-            self.selectors()
+            self.run()
 
         def banner(self):
             os.system("clear")
@@ -49,6 +48,11 @@ class GUI:
                 Select option:  '''
             s = int(input(self.o))
 
+            self.choose(s)
+
+
+            
+        def choose(self,s):
             if s == 1:
                 pass
             elif s == 2:
@@ -68,6 +72,10 @@ class GUI:
                 d = det(a)
                 print("\t\t\t\tD: ",d,end='\n\n')
             elif s == 4:
+                pass
+            elif s == 5:
+                pass
+            elif s == 6:
                 os.system("clear")
                 print("\n\t\t\t\tEnter a matrix\n\t\t\t\t==============")
                 a = ast.literal_eval(input("\t\t\t\tA:  "))
@@ -80,7 +88,9 @@ class GUI:
                 for i in range(len(d)):
                     print("\t\t\t\t   ",c[i],"=",d[i])
                 print()
-            elif s == 5:
+            elif s == 7:
+                pass
+            elif s == 8:
                 os.system("clear")
                 print("\n\t\t\t\tEnter a matrix\n\t\t\t\t==============")
                 a = ast.literal_eval(input("\t\t\t\tA:  "))
@@ -89,6 +99,24 @@ class GUI:
                 for i in c:
                     print("\t\t\t\t   ",i)
                 print()
+            elif s == 9:
+                pass
+            else:
+                print("\t\t\t\tEnter a valid number\n")
+            
+        def ask(self):
+            a = int(input("\t\t\t\tRun again?\n\t\t\t\t[1]   -  Yes  -\n\t\t\t\t[2]   -  No   -\n\n\t\t\t\t"))
+            if a == 1:
+                return 1
+            else:
+                return 0
+
+        def run(self):
+            running = 1
+            while(running):
+                self.banner()
+                self.selectors()
+                running = self.ask()
 
 
 if __name__ == "__main__":
