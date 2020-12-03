@@ -1,5 +1,3 @@
-from numpy import linalg
-
 def eigenvals(mtx):
     e = linalg.eig(mtx)[0]
     return e

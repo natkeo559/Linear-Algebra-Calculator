@@ -1,17 +1,22 @@
-def gauss_jordan(m, eps = 1.0/(10**10)):
+def gauss_jordan(m_tup, eps = 1.0/(10**10)):
     """Puts given matrix (2D array) into the Reduced Row Echelon Form.
         Returns True if successful, False if 'm' is singular.
         NOTE: make sure all the matrix items support fractions! Int matrix will NOT work!
         Written by Jarno Elonen in April 2005, released into Public Domain"""
-    
-    (h, w) = (len(m), len(m[0]))
+
+    (h, w) = (len(m_tup), len(m_tup[0]))
     for y in range(0,h):
         maxrow = y
-        
+
         for y2 in range(y+1, h):    # Find max pivot
-            if abs(m[y2][y]) > abs(m[maxrow][y]):
+            if abs(m_tup[y2][y]) > abs(m_tup[maxrow][y]):
                 maxrow = y2
-        (m[y], m[maxrow]) = (m[maxrow], m[y])
+
+        m = [list(item) for item in m_tup]
+        temp = m[y]
+        m[y] = m[maxrow]
+        m[maxrow] = temp
+        #(m[y], m[maxrow]) = (m[maxrow], m[y])
 
         if abs(m[y][y]) <= eps:     # Singular?
             return False
