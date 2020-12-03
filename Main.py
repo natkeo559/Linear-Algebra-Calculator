@@ -5,6 +5,7 @@ from Det import det
 from AddSub import add,sub
 from Transpose import transpose
 from Inverse import inverse
+from Rank import rank
 import ast
 import os
 from numpy import linalg
@@ -120,7 +121,12 @@ class GUI:
                     print("\t\t\t\t   ",c[i],"=",d[i])
                 print()
             elif s == 7:
-                pass
+                os.system("clear")
+                print("\n\t\t\t\tEnter a matrix\n\t\t\t\t==============")
+                a = ast.literal_eval(input("\t\t\t\tA:  "))
+                c = rank(a)
+                print("\t\t\t\t   ",c)
+                print()
             elif s == 8:
                 os.system("clear")
                 print("\n\t\t\t\tEnter a matrix\n\t\t\t\t==============")
